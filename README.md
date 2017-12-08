@@ -1,0 +1,1 @@
+# ALS_GWAS_1000G_mach2dat_2017
