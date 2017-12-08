@@ -1,0 +1,68 @@
+################################################################################
+# Meta-analysis based on standard error
+################################################################################
+
+# Be sure to clean your former statistics
+CLEAR
+
+
+# Parameters
+
+SCHEME   STDERR
+
+# GENOMICCONTROL ON
+
+AVERAGEFREQ ON
+MINMAXFREQ ON
+MAXWARNINGS 20
+
+# Column description
+
+SEPARATOR TAB 
+WEIGHTLABEL N
+MARKER	SNP
+WEIGHT	N
+ALLELE	ALLELE1 ALLELE2
+FREQ	FREQ1
+EFFECT	EFFECT1
+STDERR	STDERR
+PVAL	P
+
+################################################################################
+# Running the Meta-analysis
+################################################################################
+
+
+OUTFILE /pathtoMeta-analysiswithweightbasedonSE .TBL
+
+#Americans
+
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+PROCESS /pathtobatch1
+
+# Italians
+PROCESS /pathtoitalianbatch
+
+# France and Belgium
+PROCESS /pathtoFrandBbatch
+
+# UK
+PROCESS /pathtoUKbatch
+
+# van Rheenen's study
+PROCESS /pathtoVR.als.sumstats.meta.allchr
+
+ANALYZE
+
+ANALYZE HETEROGENEITY
+
+CLEAR
+
